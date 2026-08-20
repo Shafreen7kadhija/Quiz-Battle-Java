@@ -26,7 +26,15 @@ public class Main {
             switch (choice) {
 
                 case 1:
-                    System.out.println("Quiz will start soon...");
+                    Quiz quiz = new Quiz();
+
+                    int score = quiz.startQuiz(scanner);
+
+                    System.out.println("\n========== RESULT ==========");
+                    System.out.println("Player: " + name);
+                    System.out.println("Score: " + score + "/5");
+                    System.out.println("============================");
+
                     break;
 
                 case 2:

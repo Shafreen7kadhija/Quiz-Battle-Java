@@ -4,12 +4,10 @@ import java.util.Scanner;
 public class Quiz {
 
     private ArrayList<Question> questions;
-    private int score;
 
     public Quiz() {
 
         questions = new ArrayList<>();
-        score = 0;
 
         loadQuestions();
     }
@@ -55,5 +53,34 @@ public class Quiz {
                 "#",
                 "<!-- -->",
                 2));
+    }
+
+    public int startQuiz(Scanner scanner) {
+
+        int score = 0;
+
+        for (int i = 0; i < questions.size(); i++) {
+
+            Question question = questions.get(i);
+
+            System.out.println("\nQ" + (i + 1) + ". " + question.getQuestion());
+
+            System.out.println("1. " + question.getOption1());
+            System.out.println("2. " + question.getOption2());
+            System.out.println("3. " + question.getOption3());
+            System.out.println("4. " + question.getOption4());
+
+            System.out.print("Enter your answer: ");
+            int answer = scanner.nextInt();
+
+            if (answer == question.getCorrectAnswer()) {
+                System.out.println("Correct! ✅");
+                score++;
+            } else {
+                System.out.println("Wrong! ❌");
+            }
+        }
+
+        return score;
     }
 }
