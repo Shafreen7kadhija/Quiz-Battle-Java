@@ -70,8 +70,28 @@ public class Quiz {
             System.out.println("3. " + question.getOption3());
             System.out.println("4. " + question.getOption4());
 
-            System.out.print("Enter your answer: ");
-            int answer = scanner.nextInt();
+            int answer;
+
+            while (true) {
+
+                System.out.print("Enter your answer (1-4): ");
+
+                if (scanner.hasNextInt()) {
+
+                    answer = scanner.nextInt();
+
+                    if (answer >= 1 && answer <= 4) {
+                        break;
+                    }
+
+                    System.out.println("Please enter a number between 1 and 4.");
+
+                } else {
+
+                    System.out.println("Invalid input. Please enter a number.");
+                    scanner.next();
+                }
+            }
 
             if (answer == question.getCorrectAnswer()) {
                 System.out.println("Correct! ✅");
