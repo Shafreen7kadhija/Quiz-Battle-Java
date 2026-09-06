@@ -21,7 +21,28 @@ public class Main {
             System.out.println("2. Exit");
             System.out.print("Enter your choice: ");
 
-            int choice = scanner.nextInt();
+            int choice;
+
+                while (true) {
+
+                    System.out.print("Enter your choice (1-2): ");
+
+                    if (scanner.hasNextInt()) {
+
+                        choice = scanner.nextInt();
+
+                        if (choice == 1 || choice == 2) {
+                            break;
+                        }
+
+                        System.out.println("Please enter 1 or 2.");
+
+                    } else {
+
+                        System.out.println("Invalid input. Please enter a number.");
+                        scanner.next();
+                    }
+                }
 
             switch (choice) {
 
