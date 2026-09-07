@@ -103,4 +103,7 @@ public class Quiz {
 
         return score;
     }
+    public int getTotalQuestions() {
+    return questions.size();
+}
 }

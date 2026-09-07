@@ -53,7 +53,7 @@ public class Main {
 
                     System.out.println("\n========== RESULT ==========");
                     System.out.println("Player: " + name);
-                    System.out.println("Score: " + score + "/5");
+                    System.out.println("Score: " + score + "/" + quiz.getTotalQuestions());
                     System.out.println("============================");
 
                     break;
