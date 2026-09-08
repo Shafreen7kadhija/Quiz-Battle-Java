@@ -55,6 +55,15 @@ public class Main {
                     System.out.println("Player: " + name);
                     System.out.println("Score: " + score + "/" + quiz.getTotalQuestions());
                     System.out.println("============================");
+                    if (score == quiz.getTotalQuestions()) {
+                         System.out.println("Excellent! Perfect Score!");
+                    } else if (score >= 3) {
+                        System.out.println("Good job!");
+                    } else if (score >= 1) {
+                        System.out.println("Keep practicing!");
+                    } else {
+                        System.out.println("Better luck next time!");
+                    }
 
                     break;
 
